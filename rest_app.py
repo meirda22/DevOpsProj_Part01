@@ -1,10 +1,14 @@
+import signal
+
 from flask import Flask, request
+import os
 from db_connector import add_new_user
 from db_connector import get_user_name_from_db
 from db_connector import update_user_by_id
 from db_connector import delete_user_by_id
 
 app = Flask(__name__)
+
 
 # supported methods
 
@@ -60,6 +64,10 @@ def users(user_id):
             return {"user name": user_name, "status": "OK", "Code": "200"}, 200  # status code
 
 
+@app.route('/stop_server')
+def stop_server():
+    os.kill(os.getpid(), signal.CTRL_C_EVENT)
+    return "Server stopped"
 
 
 app.run(host='127.0.0.1', debug=True, port=5000)
