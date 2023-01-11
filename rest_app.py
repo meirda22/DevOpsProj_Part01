@@ -1,7 +1,6 @@
-import signal
-
 from flask import Flask, request
 import os
+import signal
 from db_connector import add_new_user
 from db_connector import get_user_name_from_db
 from db_connector import update_user_by_id
