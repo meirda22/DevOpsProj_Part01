@@ -1,8 +1,7 @@
-import signal
-
 from flask import Flask
 from db_connector import get_user_name_from_db
 import os
+import signal
 
 app = Flask(__name__)
 
