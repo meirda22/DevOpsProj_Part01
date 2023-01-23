@@ -45,10 +45,10 @@ pipeline {
         }
         post {
             success {
-                emailext attachLog: true, body: 'Email notification for DevOpsProjPart02 ', subject: 'Test email Notification - Success', to: 'meirda22@gmail.com'
+                emailext attachLog: true, body: 'Email notification for DevOpsProjPart02 ', subject: 'Test Email Notification - Success!!', to: 'meirda22@gmail.com'
             }
             failure {
-                emailext attachLog: true, body: 'Email notification for DevOpsProjPart02 ', subject: 'Test email Notification - Failure', to: 'meirda22@gmail.com'
+                emailext attachLog: true, body: 'Email notification for DevOpsProjPart02 ', subject: 'Test Email Notification - Failure!!', to: 'meirda22@gmail.com'
             }
                 
         } 
