@@ -14,15 +14,8 @@ pipeline {
             }
             stage('run rest_app'){
                 steps{
-                    script{
-                        returnValue = bat 'start /min python rest_app.py'
-                            if (returnValue == 0) {
-                                echo 'Batch file executed successfully'
-                            } else {
-                                echo 'Batch file execution failed'
-                        }
-                    }
-                }   
+                    bat 'start /min python rest_app.py'
+                }
             }
             stage('run web_app'){
                 steps{
